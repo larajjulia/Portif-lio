@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara Julia | Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagens/favicon.png" type="image/png">
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <header>
+        <nav class="navegation">
+            <ul class="menu">
+                <li>
+                    <a href="#inicio" class="menu-link">Início</a>
+                </li>
+                <li>
+                    <a href="#sobre" class="menu-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#projetos" class="menu-link">Projetos</a>
+                </li>
+                <li>
+                    <a href="#contato" class="menu-link">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio" class="inicio">
+        <img src="imagens/lara.jpeg" alt="Foto de perfil de Lara Julia" class="foto-perfil">
+        <h1>Lara Julia</h1>
+        <p class="inicio-paragrafo">Desenvolvedora Front-End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                
+                Olá! Sou a Lara, Técnica em Redes de Computadores pelo Instituto Federal de São Paulo - Campus Pirituba e, agora, estudante de Sistema de Informação pela Escola de Artes, Ciências e Humanidades da Universidade de São Paulo (EACH-USP). <br><br>
+                
+                Graças a minha trajetória estudantil, tive e continuo tendo muito contato com a área de Tecnologia da Informação, desde conhecer os componentes de uma placa mãe e acender um led com arduíno até administrar o sistema operacional Linux e criar websites e outros programas com HTML, CSS, JavaScript, C, Python e Java. <br><br>
+
+                Atualmente faço parte do setor Jurídico-Financeiro e do núcleo Front-End da Empresa Júnior do meu curso, Síntese Jr. Ao ocupar esses cargos, tenho adquirido experiência com questões legais e financeiras de uma empresa, além de outros conhecimento acerca do desenvolvimento web. 
+            
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="imagens/projeto1.png" alt="" class="projetos-imagem">
+                <h3 class="info-projetos">Tradutor</h3>
+                <p class="paragrafo-projetos">Desenvolvido com React, Vite e Tailwind, este é um projeto que simula o Google Tradutor.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="imagens/projeto2.png" alt="" class="projetos-imagem">
+                <h3 class="info-projetos">E-commerce Simon Filmes</h3>
+                <p class="paragrafo-projetos">Desenvolvido com React, Vite e Tailwind, este é o Projeto Trainee que nos foi passado: criação de um E-commerce para a empresa Simon Filmes.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="imagens/projeto3.jpeg" alt="" class="projetos-imagem">
+                <h3 class="info-projetos">Gráfica</h3>
+                <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus quod
+                    vero rem tempora recusandae harum vitae, officia voluptatibus eligendi asperiores, ipsam laboriosam
+                    impedit saepe accusamus, quia assumenda dolor! Molestias?</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        <form class="contato-formulario" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-forms">
+                <input type="text" placeholder="Digite seu nome..." id="nome">
+            </div> <br>
+
+            <div class="grupo-forms">
+                <textarea name="texto" placeholder="Digite sua mensagem..." id="mensagem"
+                    rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">
+                Enviar WhatsApp
+            </button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511968749923';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            window.open(url, '_blank');
+        } 
+    </script>
+</body>
+
+</html>
